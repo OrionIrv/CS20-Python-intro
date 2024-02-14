@@ -1,0 +1,23 @@
+#attributes
+hair_colour = "brown"
+eye_colour = "hazel"
+name = "orion" #String
+age = 17 #Integer
+height = 185 #Float
+hungry = True #Boolean
+
+#Comment
+if hungry:
+    print("eat more")
+else:
+    print("dink water")
+    
+state = "eat" if hungry else "water"
+print(state)
+
+#data types
+print( "Hair colour: " + str(type(hair_colour) ) )
+print( "Eye Colour: " + str(type(eye_colour) ))
+print( "Name: " + str(type(name) ))
+print( type(age) )
+print( type(height) )
