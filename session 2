@@ -1,0 +1,17 @@
+#Boolean is ture or false
+#an integer is a number without a period(10 and not 10.3)
+#float is a number with a period(10.3)
+#string is text in quotes("Hello")
+#complex numbers are imaginary
+
+x = 4
+y = 10
+z = 3
+
+sum_of_num = x+y+z
+diff_of_num= x-y-z
+
+#print(sum_of_num)
+#print(diff_of_num)
+
+type(x)
