@@ -11,3 +11,11 @@ print("your name is " + your_name)
 print("You are " + your_height + " cm tall")
 print("Your birhtday is " + your_birthday)
 print("your nationality is " + your_nationality)
+
+
+#rectangal
+l = int(input("how long is it?"))
+h = int(input("how tall is it?"))
+w = int(input("How wide is it?"))
+
+surface_area = str(l*w+l*w+l*h+l*h+w*h+w*h)
