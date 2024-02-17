@@ -5,17 +5,16 @@ your_height = input("How tall are you?")
 your_birthday = input("What is your Birthday?")
 your_nationality = input("What is your nationality?")
 
-#print out data for user
+#print out data for the user
 print("You are " + your_age + " years old")
 print("your name is " + your_name)
 print("You are " + your_height + " cm tall")
-print("Your birhtday is " + your_birthday)
+print("Your birthday is " + your_birthday)
 print("your nationality is " + your_nationality)
 
+height = int(input("How tall is your object?"))
+width = int(input("How wide is your object?"))
+length = int(input("How long is your object?"))
 
-#rectangal
-l = int(input("how long is it?"))
-h = int(input("how tall is it?"))
-w = int(input("How wide is it?"))
-
-surface_area = str(l*w+l*w+l*h+l*h+w*h+w*h)
+total = str((length*width*height)*2)
+print("the total surface area is " + total)
