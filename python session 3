@@ -18,3 +18,21 @@ length = int(input("How long is your object?"))
 
 total = str((length*width*height)*2)
 print("the total surface area is " + total)
+
+
+#cube, sphere, prism
+
+height = int(input("How tall is your cube?"))
+
+total = str((height**2)*6)
+print("the total surface area is " + total)  #surface area of a cube
+
+diameter = int(input("what is the diameter of you sphere?"))
+radius = float(str(diameter/2))
+
+total = str((4*3.14)*radius**2)
+print("the total surface area is " + total)  #suface area of a sphere
+
+first = int(input("What is the length of side one?"))
+second = int(input("What is the length of the second side?"))
+third = int(input("What is the length of the third side?"))
