@@ -38,5 +38,6 @@ tall = int(input("How long is the triagonal prism?"))#A = 2 * pi * r * h + 2 * p
 radi = float(str(base/2))
 parti = str(((2*3.14)*radi)*tall)#I'm using roman numerals to save space
 partii = str((2*3.14)*radi**2)
-total = (str(parti)+str(partii))
-print(str(parti+partii))
+partiii = float(parti)
+partiv = float(partii)
+print(float(partiii) + float(partiv))
