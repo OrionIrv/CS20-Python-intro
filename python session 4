@@ -31,3 +31,27 @@ for x in range (60):
 toggle = not toggle
 #final value of toggle state
 toggle_state()
+
+
+
+#####################
+#Basic Toggles and for loops
+#Orion Irving
+#Febuary 29, 2024
+#
+#####################
+toggle = True
+#Returns toggle state to shell
+def light_switch():
+    if toggle:
+        print("Light is on")
+    else:
+        print("Light is off")
+#loop returns toggle state 60 times before exiting
+for x in range (60):
+    print("time that light is on: ", x+1)
+    light_switch()
+#Boolean toggle switch to shell
+toggle = not toggle
+#final value of toggle state
+light_switch()
