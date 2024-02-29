@@ -9,3 +9,25 @@ while counter1 != counter2:
     print(counter1_str + " " + counter2_str)
 if counter1 + counter2 == 0:
     print("Both are equal")
+
+#####################
+#Basic Toggles and for loops
+#Orion Irving
+#Febuary 29, 2024
+#
+#####################
+toggle = True
+#Returns toggle state to shell
+def toggle_state():
+    if toggle:
+        print("toggle is true")
+    else:
+        print("toggle is false")
+#loop returns toggle state 60 times before exiting
+for x in range (60):
+    print("Current loop: ", x+1)
+    toggle_state()
+#Boolean toggle switch to shell
+toggle = not toggle
+#final value of toggle state
+toggle_state()
