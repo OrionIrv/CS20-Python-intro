@@ -31,3 +31,19 @@ for x in range (60):
 toggle = not toggle
 #final value of toggle state
 light_switch()
+
+#######################
+fruits = ["peach", "orange", "pear", "apple", "tomato"]
+
+
+print(fruits)
+
+print(fruits[0]) #peach
+print(fruits[1]) #orange
+print(fruits[2]) #pear
+print(fruits[3]) #apple
+print(fruits[4]) #tomato
+
+for x in fruits:
+    print(x)
+########################
