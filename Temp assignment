@@ -1,0 +1,9 @@
+#############################
+#Temp Conversions and Mean, Min/Max Calcuator
+#Orion Irving
+#March 1, 2024
+#
+#take 7 temp readings from the user in C or F and send back  the mean and the min/max in all C, K, F
+#############################
+#1, ask for mesuring system 2, ask for all temps 3, do .sort() 4, print 0 and 6 5, add + numbers up and / by list_count
+#6, do math to convert to C or F 7, repeat 8, repeat for kelvin
