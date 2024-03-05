@@ -11,13 +11,15 @@
 
 measure = str(input("What is the unit of the recorded temperature"))
 
+temps_for_week = [0,0,0,0,0,0,0]
 
-
-def temps_for_week():
+def record_weekly_temps():
     for x in range (7):
         print("day: ", x+1)
-        daily_temps = int(input("What are the tempratures for the day?"))
-temps_for_week()
+        daily_temp = int(input("What was the temprature for the day?"))
+        temps_for_week[x] = daily_temp
+record_weekly_temps()
+print(temps_for_week)
 
 
 
