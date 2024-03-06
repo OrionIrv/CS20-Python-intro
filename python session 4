@@ -47,3 +47,19 @@ print(fruits[4]) #tomato
 for x in fruits:
     print(x)
 ########################
+
+def multiply(a, b):
+    product = a * b
+    return product
+
+print(multiply(2,4))
+
+def division(a, b):
+    product = a/b
+    return product
+
+print(division(4,2))
+
+total_students = multiply(3,22)
+team_size = division(total_students,6)
+print("You have",total_students, "students, you and make 6 teams of",int(team_size))
