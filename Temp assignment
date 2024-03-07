@@ -6,27 +6,27 @@
 #take 7 temp readings from the user in C or F and send back  the mean and the min/max in all C, K, F
 #Functions are important
 #############################
-#1, ask for mesuring system 2, ask for all temps 3, do .sort() 4, print 0 and 6 5, + numbers up and / by list_count
-#6, do math to convert to C or F 7, repeat for other measurement 8, repeat for kelvin
-
 measure = str(input("What is the unit of the recorded temperature"))
 
 temps_for_week = [0,0,0,0,0,0,0]
 
-def record_weekly_temps():
+def record_weekly_temps():#asks for the temps in the week
     for x in range (7):
         print("day: ", x+1)
-        daily_temp = int(input("What was the temprature for the day?"))
+        daily_temp = float(input("What was the temprature for the day?"))
         temps_for_week[x] = daily_temp
-record_weekly_temps()
-print(temps_for_week)
-
-
-
-
+def division(a, b):
+    product = a/b
+    return product      
+def celsius_to_fahrenheit():
+    
 
 
 if measure.upper() == "CELSIUS":
     print("yellow")
-    #do function for min/max, and mean
-    #then do function to covert to fahrenheit
+    record_weekly_temps()
+    temps_for_week.sort()
+    print(f"The coldest day was: {temps_for_week[0]} Celsius")
+    print(f"The Hottest day was: {temps_for_week[6]} Celsius")#now need mean and conversion
+    sum_of_week = sum(temps_for_week)
+    print("The average of the week is",division(sum_of_week, 7), "Celsius")
