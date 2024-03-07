@@ -18,15 +18,23 @@ def record_weekly_temps():#asks for the temps in the week
 def division(a, b):
     product = a/b
     return product      
-def celsius_to_fahrenheit():
     
 
 
 if measure.upper() == "CELSIUS":
-    print("yellow")
+    print("blue")
     record_weekly_temps()
     temps_for_week.sort()
     print(f"The coldest day was: {temps_for_week[0]} Celsius")
-    print(f"The Hottest day was: {temps_for_week[6]} Celsius")#now need mean and conversion
+    print(f"The Hottest day was: {temps_for_week[6]} Celsius")#now need conversion
     sum_of_week = sum(temps_for_week)
     print("The average of the week is",division(sum_of_week, 7), "Celsius")
+    
+elif measure.upper() == "FAHRENHEIT":
+    print("red")
+    record_weekly_temps()
+    temps_for_week.sort()
+    print(f"The coldest day was: {temps_for_week[0]} Fahrenheit")
+    print(f"The Hottest day was: {temps_for_week[6]} Fahrenheit")#now need conversion
+    sum_of_week = sum(temps_for_week)
+    print("The average of the week is",division(sum_of_week, 7), "Fahrenheit")
