@@ -11,13 +11,15 @@ measure = str(input("What is the unit of the recorded temperature"))
 temps_for_week = [0,0,0,0,0,0,0]
 
 def record_weekly_temps():#asks for the temps in the week
+    print("What was the temperature of the week")
     for x in range (7):
-        print("day: ", x+1)
-        daily_temp = float(input("What was the temprature for the day?"))
+        daily_temp = float(input(f"day:{ x+1}"))
+        
         temps_for_week[x] = daily_temp
 def division(a, b):
     product = a/b
     return product      
+
     
 
 
