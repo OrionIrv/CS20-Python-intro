@@ -1,0 +1,16 @@
+#######################################
+#Madlib Assignment
+#Orion Irving
+#March 12, 2024
+#
+#Focus: EasyGUI, F-String Formating, Lists
+#Step 1: Make a Madlib which takes info from the user to create a short responce(10-15)
+#Step2: Make a madlib which asks the user for multiple values and gives the answers randomly to create a final response
+#######################################
+import easygui as easy
+#ask for all answers first, then place in story using {} and f-strings
+#need food, 2 room,5 nouns, 2 adj, adv, 3 names, verb, animal
+def nouns():
+    for x in range (5):
+        easy.enterbox("Please type a noun")
+easy.
