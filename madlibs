@@ -10,7 +10,11 @@
 import easygui as easy
 #ask for all answers first, then place in story using {} and f-strings
 #need food, 2 room,5 nouns, 2 adj, adv, 3 names, verb, animal
-def nouns():
+
+nouns = ["","","","",""]
+
+def record_nouns():#asks for the nouns
     for x in range (5):
-        easy.enterbox("Please type a noun")
-easy.
+        easy.enterbox("Please enter a noun")
+record_nouns()
+print(nouns[3])
