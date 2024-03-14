@@ -11,6 +11,17 @@ import easygui as easy
 #ask for all answers first, then place in story using {} and f-strings
 
 nouns = []
+names = []
+rooms = []
+
+# def function(number,string, list):
+#     if string == "Please give me a noun":
+#         for x in range (5):
+#         msg = F"Please give me a noun"
+#         title = "Nouns"
+#         list_of_noun = easy.enterbox(msg, title)
+#         nouns.append(list_of_noun)
+#     if
 
 def record_nouns():#asks for 5 nouns
     for x in range (5):
@@ -18,7 +29,7 @@ def record_nouns():#asks for 5 nouns
         title = "Nouns"
         list_of_noun = easy.enterbox(msg, title)
         nouns.append(list_of_noun)
-names = []
+
 
 def record_names():#asks for 3 names
     for x in range (3):
@@ -26,7 +37,7 @@ def record_names():#asks for 3 names
         title = "Names"
         list_of_names = easy.enterbox(msg, title)
         names.append(list_of_names)
-rooms = []
+
 
 def record_rooms():#asks for 2 rooms
     for x in range (2):
