@@ -9,19 +9,30 @@
 #######################################
 import easygui as easy
 #ask for all answers first, then place in story using {} and f-strings
-
+dwawadwd
 nouns = []
 names = []
 rooms = []
+adj = []
+foods = []
+animals = []
+verbs = []
+adv = []
+list_of_lists = [nouns ,names, rooms, adj, foods, animals, verbs, adv]
+
+#            msg = F"Please give me a noun"
+#            title = "Nouns"
+#            list_of_noun = easy.enterbox(msg, title)
+#            nouns.append(list_of_noun)
+
 
 # def function(number,string, list):
-#     if string == "Please give me a noun":
+#     if True:
 #         for x in range (5):
-#         msg = F"Please give me a noun"
-#         title = "Nouns"
-#         list_of_noun = easy.enterbox(msg, title)
-#         nouns.append(list_of_noun)
-#     if
+#            msg = F"Please give me a noun"
+#            title = "Nouns"
+#            list_of_noun = easy.enterbox(msg, title)
+#            nouns.append(list_of_noun)
 
 def record_nouns():#asks for 5 nouns
     for x in range (5):
@@ -30,22 +41,11 @@ def record_nouns():#asks for 5 nouns
         list_of_noun = easy.enterbox(msg, title)
         nouns.append(list_of_noun)
 
-
-def record_names():#asks for 3 names
-    for x in range (3):
-        msg = F"Please give me a name"
-        title = "Names"
-        list_of_names = easy.enterbox(msg, title)
-        names.append(list_of_names)
-
-
-def record_rooms():#asks for 2 rooms
-    for x in range (2):
+def rer x in range (2):
         msg = F"Please give me a room in a house"
         title = "Roooms of a house"
         list_of_rooms = easy.enterbox(msg, title)
         rooms.append(list_of_rooms)
-adj = []
 
 def record_adj():#asks for 2 adj
     for x in range (2):
@@ -53,52 +53,39 @@ def record_adj():#asks for 2 adj
         title = "Adjectives"
         list_of_adj = easy.enterbox(msg, title)
         adj.append(list_of_adj)
-foods = []
 
 def record_foods():#asks for 1 foods
     for x in range (1):
         msg = F"Please give me a food"
         title = "Foods"
         list_of_foods = easy.enterbox(msg, title)
-        foods.append(list_of_foods)
-animals = []
-
-def record_animals():#asks for 1 foods
-    for x in range (1):
-        msg = F"Please give me a animal"
-        title = "animals"
         list_of_animals = easy.enterbox(msg, title)
         animals.append(list_of_animals)
-verbs = []
 
 def record_verbs():#asks for 1 verb
     for x in range (1):
-        msg = F"Please give me a verb"
-        title = "verbs"
-        list_of_foods = easy.enterbox(msg, title)
-        verbs.append(list_of_verbs)
-def record_verbs():#asks for 1 verb
-    for x in range (1):
-        msg = F"Please give me a verb"
+        msg = F"Please give me a past tense verb"
         title = "verbs"
         list_of_verbs = easy.enterbox(msg, title)
         verbs.append(list_of_verbs)
-adv = []
+
 def record_adv():#asks for 1 adv
     for x in range (1):
         msg = F"Please give me an adverb"
         title = "adverbs"
         list_of_adv = easy.enterbox(msg, title)
         adv.append(list_of_adv)
-        
-record_nouns()
-record_names()
-record_rooms()
-record_adj()
-record_foods()
-record_animals()
-record_verbs()
-record_adv()
+def do_it():    
+    record_nouns()
+    record_names()
+    record_rooms()
+    record_adj()
+    record_foods()
+    record_animals()
+    record_verbs()
+    record_adv()
+    
+do_it()
 
 msg = F"Last week was my birthday. We went to my Grandma's house and had {foods[0]} for supper."\
 F" After that, we all sat in the {rooms[0]} to open presents. The first gift was from my sister,"\
@@ -112,3 +99,5 @@ F" {verbs[0]} around the room. I heard the noise again. Suddenly, it occured to 
 F" one of the presents! I opened the gift and and inside the box was a baby {animals[0]}! What a suprise!"
 title = "MadLib"
 easy.msgbox(msg, title)
+
+print(list_of_lists) foods.append(list_of_foods)
