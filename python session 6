@@ -18,3 +18,32 @@ match lang:
         print("You can become a mobile app developer")
     case _:
         print("The language doesn't matter, what matters is solving problems.")
+
+##################myList = ["boots", "runners"]
+#Chamge are possbile (mutable)
+#Duplicates are possibe
+#.apend(), .remove(), and .clear()
+#Methods can alter the data
+
+myTuple = ("Apple", "Banana", "Apple")
+#Change isn't posssible(non-mutable), but duplcates are
+#reassignment is possible
+
+le = 10
+wi = 15
+he = 12
+
+def shape_calc(le, wi, he):
+    area = 2*(le*wi + le*he + wi*he)
+    volume = (le*wi*he)
+    shape_data = (area, volume)
+    return shape_data
+
+print(shape_calc(le, wi, he))
+
+#myDictionary = {key:value}
+myTruck = {"Brand":"Toyota",
+                "model":"Tundra",
+                "year": 2024,
+                "colour":"Blue"}
+myTruck.update({"tires": "raised"})
