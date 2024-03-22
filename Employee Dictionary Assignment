@@ -7,24 +7,41 @@
 
 import easygui as easy
 
-#Create a nest dictionary
-employee = {{"name":"Slater",
-            "job":"teacher",
-            "location": "CCHS",
-            "start_date": 2018}}
+#Create a nest dictionary or list of dictionaries
+
+emp1 = {"name":"Slater", "job":"Teacher", "Location": "CCHS", "start_date": 2018}
+msg = "Would you like to add an employee to the register?"
+title = "Add Employees"
+all_employees = [emp1,]
+
+running = True
+def end():
+    running = False
 
 def add_person():
-    #Get job info: name,job,location,start_date 
-    #Create local dictionary
-    #Add to global dictionary
+    if easy.enterbox(msg, title).upper() == "YES":
+        name = easy.enterbox("What is the employees name?", "Name")
+        job = easy.enterbox("What is the employees job?", "Job")
+        location = easy.enterbox(F"Where does {name} work?", "Location")
+        start = easy.enterbox(F"When did {name} start at this job?", "Start Date")
+        emp2 = {"name":name, "job":job, "Location": location, "start_date": start}
+    elif easy.enterbox(msg, title).upper() == "NO":
+        end()
     
 def print_employees():
     #Print all NAMES from global dictionary
+    print("dasadw")
     
 def print_job_location_pairs():
     #Print out ALL jobs and their locations
+    print("ijhfuidg")
     
 def print_possible_raise():
     #If employee started prior to 2020,
     #eligible for a raise, print out data
     #for individual
+    print("snFN")
+
+while running:
+    add_person()
+    
