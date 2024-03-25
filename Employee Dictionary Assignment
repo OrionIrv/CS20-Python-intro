@@ -12,21 +12,21 @@ import easygui as easy
 emp1 = {"name":"Slater", "job":"Teacher", "Location": "CCHS", "start_date": 2018}
 msg = "Would you like to add an employee to the register?"
 title = "Add Employees"
-all_employees = [emp1,]
+emp2 = {}
+all_employees = [emp1]
 
 running = True
-def end():
-    running = False
 
 def add_person():
-    if easy.enterbox(msg, title).upper() == "YES":
+    add_person = easy.enterbox(msg, title)
+    if  add_person.upper() == "YES":
         name = easy.enterbox("What is the employees name?", "Name")
-        job = easy.enterbox("What is the employees job?", "Job")
+        job = easy.enterbox(F"What is {name}'s job?", "Job")
         location = easy.enterbox(F"Where does {name} work?", "Location")
-        start = easy.enterbox(F"When did {name} start at this job?", "Start Date")
-        emp2 = {"name":name, "job":job, "Location": location, "start_date": start}
-    elif easy.enterbox(msg, title).upper() == "NO":
-        end()
+        start = easy.enterbox(F"What year did {name} start at this job?", "Start Date")
+        emp2.update({"Name":name, "Job":job, "Location":location, "Start":start})
+    else:
+        exit()
     
 def print_employees():
     #Print all NAMES from global dictionary
@@ -44,4 +44,5 @@ def print_possible_raise():
 
 while running:
     add_person()
+    print(emp2)
     
