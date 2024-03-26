@@ -9,11 +9,13 @@ import easygui as easy
 
 #Create a nest dictionary or list of dictionaries
 
-emp1 = {"name":"Slater", "job":"Teacher", "Location": "CCHS", "start_date": 2018}
+
 msg = "Would you like to add an employee to the register?"
 title = "Add Employees"
+emp1 = {"name":"Slater", "job":"Teacher", "Location": "CCHS", "start_date": 2018}
 emp2 = {}
-all_employees = [emp1]
+all_employees = []
+
 
 running = True
 
@@ -29,6 +31,8 @@ def add_person():
         exit()
     
 def print_employees():
+    for x in range(all_employees):
+        easy.msgbox(msg = name, title = "Names")
     #Print all NAMES from global dictionary
     print("dasadw")
     
@@ -44,5 +48,5 @@ def print_possible_raise():
 
 while running:
     add_person()
-    print(emp2)
+    print(all_employees)
     
