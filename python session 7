@@ -31,3 +31,54 @@ orion.left(90)
 orion.forward(60)
 orion.left(90)
 orion.forward(100)
+
+###############################################
+
+import turtle as trt
+
+window = trt.Screen()
+window.bgcolor("grey")
+
+was = trt.Turtle()
+global x
+def ring_count():
+    rings = int(input("how manx rings is the target?"))
+    rings = rings-1
+    x = 50
+    print(x, rings)
+    for x in range(rings):
+        x = x+20
+        rings = rings-1
+        print(x, rings)
+
+
+this = "white"        
+while x>50:
+    x = x-20
+    was.dot(x, this)
+        
+        
+ring_count()
+that = "black"
+was.dot(x, that)
+
+
+
+
+
+
+
+# x = 50
+# i = x+20
+# 
+# 
+# def createTarget(ring_count):
+#     was.dot(x, "blue")
+#     for ring_count in range(100):
+#         was.dot(i, "black")
+#         was.dot(i-10, "black")
+#         
+# createTarget(50)
+
+# was.color("red")
+# was.dot(10)
