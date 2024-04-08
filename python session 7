@@ -82,3 +82,13 @@ was.dot(x, that)
 
 # was.color("red")
 # was.dot(10)
+
+#####################################
+import turtle as t
+
+turt1 = t.Turtle(shape="turtle", visible=True)
+
+t.setup(400,400, 500, 500)
+
+#make turtle race, raspberry pi example
+
