@@ -1,0 +1,32 @@
+import turtle as t###############           turtle race 
+
+
+window = t.Screen()
+window.bgcolor("black")
+
+turt1 = t.Turtle(shape="turtle", visible=True)
+x=0
+t.setup(1000, 1000, 500, 0)
+
+xStart = -350  #The x and y of the start line
+yStart = 350
+def start_line():
+    turt1.pencolor("white")
+    turt1.pensize(3)
+    turt1.penup()
+    turt1.setpos((xStart,yStart))
+    turt1.pendown()
+    turt1.setpos((xStart,yStart-500))#setting up the start line
+    
+start_line()
+
+while x<11:
+    x+= 1
+    print(x)# this is here to count the lines to draw for the distence raced
+    
+
+
+
+#make turtle race, raspberry pi example
+#need a function for creating the lines,( drawing vertical lines in grey or light grey)
+# and setting up the turtles in position,( making the turtles differing colours and in a vertical line facing the same way)
