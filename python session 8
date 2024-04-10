@@ -1,28 +1,104 @@
-import turtle as t###############           turtle race 
+import turtle as t
+from random import random
+
 
 
 window = t.Screen()
-window.bgcolor("black")
+window.bgcolor("grey")
 
+setup = t.Turtle(shape="turtle", visible=False)
+setDown= t.Turtle(shape="turtle", visible=False)
 turt1 = t.Turtle(shape="turtle", visible=True)
+turt1.color("white")
+turt2 = t.Turtle(shape="turtle", visible=True)
+turt2.color("red")
+turt3 = t.Turtle(shape="turtle", visible=True)
+turt3.color("yellow")
+turt4 = t.Turtle(shape="turtle", visible=True)
+turt4.color("green")
+turt5 = t.Turtle(shape="turtle", visible=True)
+turt5.color("blue")
+
 x=0
-t.setup(1000, 1000, 500, 0)
+t.setup(800, 800, 500, 0)
 
 xStart = -350  #The x and y of the start line
 yStart = 350
 def start_line():
-    turt1.pencolor("white")
-    turt1.pensize(3)
-    turt1.penup()
-    turt1.setpos((xStart,yStart))
-    turt1.pendown()
-    turt1.setpos((xStart,yStart-500))#setting up the start line
+    setup.pencolor("white")
+    setup.pensize(3)
+    setup.penup()
+    setup.setpos((xStart,yStart))
+    setup.pendown()
+    setup.setpos((xStart,yStart-500))#setting up the start line
     
-start_line()
+def end_line():
+    setDown.pencolor("white")
+    setDown.pensize(3)
+    setDown.penup()
+    setDown.setpos((300,yStart))
+    setDown.pendown()
+    setDown.setpos((300,yStart-500))
 
-while x<11:
-    x+= 1
-    print(x)# this is here to count the lines to draw for the distence raced
+def on_your_marks():
+    turt1.penup()
+    turt1.goto((xStart-18,yStart-75))
+    turt1.pendown()
+    turt2.penup()
+    turt2.goto((xStart-18,yStart-150))
+    turt2.pendown()
+    turt3.penup()
+    turt3.goto((xStart-18,yStart-225))
+    turt3.pendown()
+    turt4.penup()
+    turt4.goto((xStart-18,yStart-300))
+    turt4.pendown()
+    turt5.penup()
+    turt5.goto((xStart-18,yStart-375))
+    turt5.pendown()  #gets the turtles set up
+####################
+#Set up is done
+    
+def runners():
+    while t.distance(turt1) < 459.40788:
+        steps = int(random() * 5)
+        turt1.fd(steps)
+
+
+
+
+
+
+
+start_line()
+end_line()
+on_your_marks()
+print(t.distance(turt1))
+runners()
+print(t.distance(turt1))
+    
+
+
+
+#make turtle race, raspberry pi example
+#need a function for creating the lines,( drawing vertical lines in grey or light grey)
+# and setting up the turtles in position,( making the turtles differing colours and in a vertical line facing the same way)
+
+
+
+
+
+
+
+
+
+
+start_line()
+end_line()
+on_your_marks()
+print(t.distance(turt1))
+runners()
+print(t.distance(turt1))
     
 
 
