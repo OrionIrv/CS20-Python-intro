@@ -1,6 +1,6 @@
 import turtle as t
-from random import random
-
+import random
+import easygui as easy
 
 
 window = t.Screen()
@@ -18,7 +18,7 @@ turt4 = t.Turtle(shape="turtle", visible=True)
 turt4.color("green")
 turt5 = t.Turtle(shape="turtle", visible=True)
 turt5.color("blue")
-
+racers = [turt1, turt2, turt3, turt4, turt5]
 x=0
 t.setup(800, 800, 500, 0)
 
@@ -60,33 +60,16 @@ def on_your_marks():
 #Set up is done
     
 def runners():
-    while t.distance(turt1) < 459.40788:
-        steps = int(random() * 5)
-        turt1.fd(steps)
-
-
-
-
-
-
-
-start_line()
-end_line()
-on_your_marks()
-print(t.distance(turt1))
-runners()
-print(t.distance(turt1))
-    
-
-
-
-#make turtle race, raspberry pi example
-#need a function for creating the lines,( drawing vertical lines in grey or light grey)
-# and setting up the turtles in position,( making the turtles differing colours and in a vertical line facing the same way)
-
-
-
-
+    for racer in racers:
+        if racer.xcor()<300:
+            steps = int(random.randint(1,5))
+            print(steps)
+            racer.fd(steps)
+        else:
+            #race over
+            t.done()
+            easy.msgbox("woohoo", "congrats")
+    runners()
 
 
 
@@ -99,7 +82,10 @@ on_your_marks()
 print(t.distance(turt1))
 runners()
 print(t.distance(turt1))
+easy.msgbox("woohoo", "congrats")
     
+
+
 
 
 
