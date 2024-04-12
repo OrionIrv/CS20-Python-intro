@@ -4,7 +4,7 @@ import easygui as easy
 
 
 window = t.Screen()
-window.bgcolor("grey")
+window.bgcolor("black")
 
 setup = t.Turtle(shape="turtle", visible=False)
 setDown= t.Turtle(shape="turtle", visible=False)
@@ -18,12 +18,22 @@ turt4 = t.Turtle(shape="turtle", visible=True)
 turt4.color("green")
 turt5 = t.Turtle(shape="turtle", visible=True)
 turt5.color("blue")
+
 racers = [turt1, turt2, turt3, turt4, turt5]
+
+race = True
 x=0
+
 t.setup(800, 800, 500, 0)
 
+end = 300
+
 xStart = -350  #The x and y of the start line
+
 yStart = 350
+
+
+#Functions for set up#
 def start_line():
     setup.pencolor("white")
     setup.pensize(3)
@@ -56,32 +66,54 @@ def on_your_marks():
     turt5.penup()
     turt5.goto((xStart-18,yStart-375))
     turt5.pendown()  #gets the turtles set up
+    
+def dotted_lines_down():
+    setup.penup()
+    setup.color("grey")
+    setup.goto(xStart+20,yStart)
+    while setup.ycor() >> -500:
+        setup.pendown()
+        setup.fd(10)
+        setup.penup()
+        setup.fd(10)
+        
+    
+    
+    
+    
+    
+    
 ####################
 #Set up is done
     
-def runners():
-    for racer in racers:
-        if racer.xcor()<300:
-            steps = int(random.randint(1,5))
-            print(steps)
-            racer.fd(steps)
-        else:
-            #race over
-            t.done()
-            easy.msgbox("woohoo", "congrats")
-    runners()
-
-
-
-
+def runners(race):
+    while race:
+        for racer in racers:
+            if racer.xcor()<300:
+                steps = int(random.randint(1,10))
+                print(steps)
+                racer.fd(steps)
+            else:
+                #race over
+                race = False
+                if turt1.xcor() >= 300:
+                    print("winner turt1")
+                elif turt2.xcor() >= 300:
+                    print("winner turt2")
+                elif turt3.xcor() >= 300:
+                    print("winner turt3")
+                elif turt4.xcor() >= 300:
+                    print("winner turt4")
+                elif turt5.xcor() >= 300:
+                    print("winner turt5")
+                
 
 
 start_line()
 end_line()
+dotted_lines_down()
 on_your_marks()
-print(t.distance(turt1))
-runners()
-print(t.distance(turt1))
+runners(race) 
 easy.msgbox("woohoo", "congrats")
     
 
