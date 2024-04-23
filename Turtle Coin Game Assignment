@@ -18,11 +18,14 @@ player = t.Turtle(shape="turtle")
 player.color("white")
 screen = t.Screen()
 screen.setup(700, 900)
-line_1 = t.Turtle(visible=False)
-line_2 = t.Turtle(visible=False)
+coin_1 = t.Turtle(visible=True)
+coin_2 = t.Turtle(visible=False)
+coin_3 = t.Turtle(visible=True)
+coin_4 = t.Turtle(visible=True)
 score = 00
 lives = 5
-
+starterY = 500
+starterX = [-240, -220, -200, -180, -160, -140, -120, -100, -80, -60, -40, -20, 0, 240, 220, 200, 180, 160, 140, 120, 100, 80, 60, 40, 20]
 
     
 #Lists
@@ -30,27 +33,27 @@ lives = 5
 
 #####Functions#####
 def make_lines():
-    line_1.speed(0)
-    line_2.speed(0)
-    line_1.penup()
-    line_1.goto(250,500)
-    line_2.penup()
-    line_2.goto(-250,500)
-    line_1.pendown()
-    line_2.pendown()
-    line_1.goto(250,-360)
-    line_2.goto(-250,-360)
-    line_1.penup()
-    line_2.penup()
+    coin_1.speed(0)
+    coin_2.speed(0)
+    coin_1.penup()
+    coin_1.goto(250,500)
+    coin_2.penup()
+    coin_2.goto(-250,500)
+    coin_1.pendown()
+    coin_2.pendown()
+    coin_1.goto(250,-360)
+    coin_2.goto(-250,-360)
+    coin_1.penup()
+    coin_2.penup()
 
 ##Core Game Functions##
 #Create Score
 #Create the score field on the top of the screen
 def setup_score():#And lives
-    line_2.goto(-270,-370)
-    line_2.write(score)
-    line_1.goto(270,-370)
-    line_1.write(lives)
+    coin_2.goto(-270,-370)
+    coin_2.write(score)
+    coin_1.goto(270,-370)
+    coin_1.write(lives)
     
     
 
@@ -90,7 +93,7 @@ def check_horizontal_bounds():
 #Create Collectable
 #Use a for loop to create and store your collectables into a list
 def create_collectables():
-    pass
+    coin_1.goto(random.shuffle(starterX), starterY)
 
 #Move Collectable 
 #Go through your list of collectables and move each item
@@ -134,9 +137,9 @@ def game_over():
 make_lines()
 setup_score()
 create_player()
+create_collectables()
 screen.onkey(move_left, 'a')
 screen.onkey(move_right, 'd')
-
 screen.listen()
 
 
