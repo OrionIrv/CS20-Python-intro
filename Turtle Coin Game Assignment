@@ -11,21 +11,23 @@
 
 #Import Libraries
 import turtle as t
-import random
+from random import randint
 
 #Global Variable
+running = True
 player = t.Turtle(shape="turtle")
 player.color("white")
 screen = t.Screen()
 screen.setup(700, 900)
 coin_1 = t.Turtle(visible=True)
-coin_2 = t.Turtle(visible=False)
+coin_2 = t.Turtle(visible=True)
 coin_3 = t.Turtle(visible=True)
 coin_4 = t.Turtle(visible=True)
 score = 00
 lives = 5
 starterY = 500
 starterX = [-240, -220, -200, -180, -160, -140, -120, -100, -80, -60, -40, -20, 0, 240, 220, 200, 180, 160, 140, 120, 100, 80, 60, 40, 20]
+coin = [coin_1, coin_2, coin_3, coin_4]
 
     
 #Lists
@@ -54,6 +56,7 @@ def setup_score():#And lives
     coin_2.write(score)
     coin_1.goto(270,-370)
     coin_1.write(lives)
+    
     
     
 
@@ -93,7 +96,10 @@ def check_horizontal_bounds():
 #Create Collectable
 #Use a for loop to create and store your collectables into a list
 def create_collectables():
-    coin_1.goto(random.shuffle(starterX), starterY)
+    coin_1.goto(randint(-240,240),starterY)
+    coin_2.goto(randint(-240,240),starterY)
+    coin_3.goto(randint(-240,240),starterY)
+    coin_4.goto(randint(-240,240),starterY)
 
 #Move Collectable 
 #Go through your list of collectables and move each item
