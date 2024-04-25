@@ -11,7 +11,7 @@
 
 #Import Libraries
 import turtle as t
-from random import randint
+import random
 
 #Global Variable
 running = True
@@ -27,7 +27,7 @@ score = 00
 lives = 5
 starterY = 500
 starterX = [-240, -220, -200, -180, -160, -140, -120, -100, -80, -60, -40, -20, 0, 240, 220, 200, 180, 160, 140, 120, 100, 80, 60, 40, 20]
-coin = [coin_1, coin_2, coin_3, coin_4]
+coins = [coin_1, coin_2, coin_3, coin_4]
 
     
 #Lists
@@ -96,15 +96,25 @@ def check_horizontal_bounds():
 #Create Collectable
 #Use a for loop to create and store your collectables into a list
 def create_collectables():
-    coin_1.goto(randint(-240,240),starterY)
-    coin_2.goto(randint(-240,240),starterY)
-    coin_3.goto(randint(-240,240),starterY)
-    coin_4.goto(randint(-240,240),starterY)
-
+    coin_3.penup()
+    coin_4.penup()
+    random.shuffle(starterX)
+    coin_1.goto(starterX[1],random.randint(500,1000))
+    coin_2.goto(starterX[2],random.randint(500,1000))
+    coin_3.goto(starterX[3],random.randint(500,1000))
+    coin_4.goto(starterX[4],random.randint(500,1000))
+    coin_1.setheading(270)
+    coin_2.setheading(270)
+    coin_3.setheading(270)
+    coin_4.setheading(270)
+    
 #Move Collectable 
 #Go through your list of collectables and move each item
 def move_collectable():
-    pass
+    for coin in coins:
+        curpos = coin.ycor()
+        newpos = curpos- 10
+        coin.sety(newpos)
 
 #Check Collectable Screen Bounds (Vertical)
 #Check to see if a falling item is below vertical bounds, if so move back to the top
@@ -144,9 +154,12 @@ make_lines()
 setup_score()
 create_player()
 create_collectables()
+move_collectable()
 screen.onkey(move_left, 'a')
 screen.onkey(move_right, 'd')
 screen.listen()
+for x in range (200):
+    move_collectable()
 
 
 #####Core Game Loop#####
