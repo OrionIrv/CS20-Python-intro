@@ -97,7 +97,9 @@ def check_horizontal_bounds():
 #Use a for loop to create and store your collectables into a list
 def create_collectables():
     coin_3.penup()
+    coin_3.speed(0)
     coin_4.penup()
+    coin_4.speed(0)
     random.shuffle(starterX)
     coin_1.goto(starterX[1],random.randint(500,1000))
     coin_2.goto(starterX[2],random.randint(500,1000))
@@ -107,20 +109,37 @@ def create_collectables():
     coin_2.setheading(270)
     coin_3.setheading(270)
     coin_4.setheading(270)
+    coin_1.speed(6)
+    coin_2.speed(6)
+    coin_3.speed(6)
+    coin_4.speed(6)
     
 #Move Collectable 
 #Go through your list of collectables and move each item
 def move_collectable():
     for coin in coins:
-        curpos = coin.ycor()
-        newpos = curpos- 10
-        coin.sety(newpos)
+        if coin.ycor() < -380:
+            coin.speed(0)
+        else:
+            coin.speed(6)
+        
+        newpos = check_vertical_bounds(coin)
+        coin.setpos(newpos)
 
 #Check Collectable Screen Bounds (Vertical)
 #Check to see if a falling item is below vertical bounds, if so move back to the top
 #Must pass the item in as an arguement
-def check_vertical_bounds(item):
-    pass
+def check_vertical_bounds(coin):
+    curpos = coin.ycor()
+    random.shuffle(starterX)
+    if curpos < -380:
+        newpos = (starterX[5], random.randint(500, 1000))
+        
+        return newpos
+    else:
+        newpos = (coin.xcor(),curpos-10)
+        return newpos
+        
 
 #Check Player Catch Collectable
 #Pass in a collectable item from a list and determine if it is in contact/proximity with the player
@@ -151,15 +170,17 @@ def game_over():
 #####Setup Function Calls#####
 #Use this section to call any core functions that are only called once and help to setup the turtle/game environment
 make_lines()
-setup_score()
-create_player()
-create_collectables()
-move_collectable()
-screen.onkey(move_left, 'a')
-screen.onkey(move_right, 'd')
-screen.listen()
-for x in range (200):
+while running:
+    setup_score()
+    create_player()
+    create_collectables()
     move_collectable()
+
+    screen.onkey(move_left, 'a')
+    screen.onkey(move_right, 'd')
+    screen.listen()
+    for x in range (200):
+        move_collectable()
 
 
 #####Core Game Loop#####
