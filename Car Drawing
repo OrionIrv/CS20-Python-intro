@@ -1,0 +1,33 @@
+#####################
+#using turtle
+###################
+
+import turtle as trt
+
+window = trt.Screen()
+window.bgcolor("light grey")
+
+orion = trt.Turtle()
+orion.pensize(5)
+orion.speed(10)
+
+orion.color("black")
+orion.forward(150)
+orion.left(90)
+orion.forward(50)
+orion.circle(10)
+orion.forward(10)
+orion.left(90)
+orion.forward(50)
+orion.right(45)
+orion.forward(80)
+orion.left(45)
+orion.forward(100)
+orion.left(45)
+orion.forward(80)
+orion.right(45)
+orion.forward(50)
+orion.left(90)
+orion.forward(60)
+orion.left(90)
+orion.forward(100)
